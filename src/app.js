@@ -8,7 +8,7 @@ import "dotenv/config";
 import { getShifts } from "./form.js";
 
 export const app = new Hono();
-export const cache = new NodeCache({ stdTTL: 60 });
+export const cache = new NodeCache({ stdTTL: 30 });
 
 app.get("/api/shifts", async (c) => {
   const shifts = await getShifts();
